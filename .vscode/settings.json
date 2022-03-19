@@ -1,10 +1,7 @@
 {
   "deno.enable": true,
   "deno.lint": true,
-  "deno.unstable": true,
-  "cSpell.words": [
-    "pako"
-  ],
+  "deno.unstable": false,
   "cSpell.ignoreWords": [
     "Aczo",
     "Aogka",
