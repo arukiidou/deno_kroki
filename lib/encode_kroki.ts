@@ -5,7 +5,7 @@ import { encode } from "https://deno.land/std@0.130.0/encoding/base64url.ts";
 /**
  * encoded in the URL using a deflate + base64 algorithm.
  * @link https://docs.kroki.io/kroki/setup/encode-diagram/
- * @param {string} diagramSource The source string for kroki diagram
+ * @param {string} diagramSource The source string for Kroki diagram
  *
  * Example:
  *
