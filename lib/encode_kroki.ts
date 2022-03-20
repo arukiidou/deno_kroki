@@ -6,11 +6,12 @@ import { encode } from "https://deno.land/std@0.130.0/encoding/base64url.ts";
  * encoded in the URL using a deflate + base64 algorithm.
  * @link https://docs.kroki.io/kroki/setup/encode-diagram/
  * @param {string} diagramSource The source string for Kroki diagram
+ * @returns {string} The base64 encoded string
  *
  * Example:
  *
  * ```ts
- * import { encodeKroki } from "./lib/encode_kroki.ts";
+ * import { encodeKroki } from "https://deno.land/x/deno_kroki@v0.2.1/lib/encode_kroki.ts";
  *
  * const diagramSource = `digraph G {
  *   Hello->World

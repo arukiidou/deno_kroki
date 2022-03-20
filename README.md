@@ -5,7 +5,11 @@ encode-diagram deno client/library from [Kroki](https://docs.kroki.io/kroki/)
 ## usage
 
 ```ts:usage.ts
-import { encodeKroki } from "./lib/encode_kroki.ts";
+// npm(esmodule)
+// import { encodeKroki } from "deno_encode_kroki";
+
+// deno
+import { encodeKroki } from "https://deno.land/x/deno_kroki@v0.2.1/lib/encode_kroki.ts";
 
 const diagramSource = `digraph G {
     Hello->World
