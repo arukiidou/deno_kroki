@@ -21,6 +21,8 @@ import { encode } from "https://deno.land/std@0.134.0/encoding/base64url.ts";
  * ```
  */
 export function encodeKroki(diagramSource: string): string {
-  const compressed: Uint8Array = zlib.deflateSync(diagramSource, { level: zlib.constants.Z_BEST_COMPRESSION });
+  const compressed: Uint8Array = zlib.deflateSync(diagramSource, {
+    level: zlib.constants.Z_BEST_COMPRESSION,
+  });
   return encode(compressed);
 }

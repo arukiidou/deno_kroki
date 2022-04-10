@@ -19,7 +19,7 @@ https://www.npmjs.com/package/deno_encode_kroki
 // import { encodeKroki } from "deno_encode_kroki";
 
 // deno
-import { encodeKroki } from "https://deno.land/x/deno_kroki@v0.2.1/lib/encode_kroki.ts";
+import { encodeKroki } from "https://deno.land/x/deno_kroki@v0.3.1/lib/encode_kroki.ts";
 
 const diagramSource = `digraph G {
     Hello->World
