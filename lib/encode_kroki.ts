@@ -1,6 +1,5 @@
-import STATUS from "https://deno.land/x/compress@v0.4.5/zlib/zlib/status.ts";
-import { deflate } from "https://deno.land/x/compress@v0.4.5/mod.ts";
-import { encode } from "https://deno.land/std@0.130.0/encoding/base64url.ts";
+import zlib from "https://deno.land/std@0.134.0/node/zlib.ts";
+import { encode } from "https://deno.land/std@0.134.0/encoding/base64url.ts";
 
 /**
  * encoded in the URL using a deflate + base64 algorithm.
@@ -22,9 +21,6 @@ import { encode } from "https://deno.land/std@0.130.0/encoding/base64url.ts";
  * ```
  */
 export function encodeKroki(diagramSource: string): string {
-  const encoded: Uint8Array = new TextEncoder().encode(diagramSource);
-  const compressed: Uint8Array = deflate(encoded, {
-    level: STATUS.Z_BEST_COMPRESSION,
-  });
+  const compressed: Uint8Array = zlib.deflateSync(diagramSource, { level: zlib.constants.Z_BEST_COMPRESSION });
   return encode(compressed);
 }

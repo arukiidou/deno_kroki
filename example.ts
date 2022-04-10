@@ -7,7 +7,9 @@ const diagramSource = `digraph G {
 
 const diagramtype = "graphviz";
 const fotmat = "svg";
-console.log(`https://kroki.io/${diagramtype}/${fotmat}/${encodeKroki(diagramSource)}`);
+console.log(
+  `https://kroki.io/${diagramtype}/${fotmat}/${encodeKroki(diagramSource)}`,
+);
 
 const path = "./hello.svg";
 convertKroki(diagramtype, fotmat, diagramSource, path);

@@ -14,7 +14,8 @@ await build({
     // package.json properties
     name: "deno_encode_kroki",
     version: Deno.args[0],
-    description: "encode-diagram deno client/library from [Kroki](https://docs.kroki.io/kroki/)",
+    description:
+      "encode-diagram deno client/library from [Kroki](https://docs.kroki.io/kroki/)",
     license: "MIT",
     repository: {
       type: "git",

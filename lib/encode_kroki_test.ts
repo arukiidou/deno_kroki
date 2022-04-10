@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.130.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.134.0/testing/asserts.ts";
 import { encodeKroki } from "./encode_kroki.ts";
 
 const graphviz = `digraph G {

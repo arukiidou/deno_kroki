@@ -5,9 +5,11 @@ encode-diagram deno client/library from [Kroki](https://docs.kroki.io/kroki/)
 ## package registry
 
 ### deno
+
 https://deno.land/x/deno_kroki@v0.2.1
 
 ### npm
+
 https://www.npmjs.com/package/deno_encode_kroki
 
 ## usage

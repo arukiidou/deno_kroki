@@ -1,10 +1,10 @@
 // "type": "module",
-import { encodeKroki } from "deno_encode_kroki";
+// import { encodeKroki } from "deno_encode_kroki";
 
-const diagramSource = `digraph G {
-    Hello->World
-}`;
+// const diagramSource = `digraph G {
+//     Hello->World
+// }`;
 
-const diagramtype = "graphviz";
-const fotmat = "svg";
-console.log(`https://kroki.io/${diagramtype}/${fotmat}/${encodeKroki(diagramSource)}`);
+// const diagramtype = "graphviz";
+// const fotmat = "svg";
+// console.log(`https://kroki.io/${diagramtype}/${fotmat}/${encodeKroki(diagramSource)}`);
