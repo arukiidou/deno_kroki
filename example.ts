@@ -1,5 +1,6 @@
-import { encodeKroki } from "https://deno.land/x/deno_kroki@v0.3.1/lib/encode_kroki.ts";
-import { convertKroki } from "https://deno.land/x/deno_kroki@v0.3.1/lib/fetch_kroki.ts";
+import { encodeKrokiURL } from "./lib/encode_kroki.ts";
+import { convertKroki } from "./lib/fetch_kroki.ts";
+import { baseURL } from "./kroki.config.ts";
 
 const diagramSource = `digraph G {
     Hello->World
@@ -7,9 +8,13 @@ const diagramSource = `digraph G {
 
 const diagramtype = "graphviz";
 const fotmat = "png";
-console.log(
-  `https://kroki.io/${diagramtype}/${fotmat}/${encodeKroki(diagramSource)}`,
-);
+console.log(encodeKrokiURL(baseURL!, diagramtype, fotmat, diagramSource));
 
 const path = "./hello.png";
-convertKroki(diagramtype, fotmat, diagramSource, path);
+convertKroki(encodeKrokiURL(baseURL!, diagramtype, fotmat, diagramSource), path);
+
+const fotmatsvg = "svg";
+console.log(encodeKrokiURL(baseURL!, diagramtype, fotmatsvg, diagramSource));
+
+const pathsvg= "./hello.svg";
+convertKroki(encodeKrokiURL(baseURL!, diagramtype, fotmatsvg, diagramSource), pathsvg);

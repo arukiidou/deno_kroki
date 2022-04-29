@@ -1,1 +1,0 @@
-export const baseURL = Deno.env.get("KROKI_URL");
