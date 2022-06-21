@@ -1,20 +1,14 @@
-import { encodeKrokiURL } from "./lib/encode_kroki.ts";
-import { convertKroki } from "./lib/fetch_kroki.ts";
-import { baseURL } from "./kroki.config.ts";
+import { encodeKrokiURL, convertKroki, DiagramType, OutputFormat } from "./lib/mod.ts";
 
 const diagramSource = `digraph G {
     Hello->World
 }`;
 
-const diagramtype = "graphviz";
-const fotmat = "png";
-console.log(encodeKrokiURL(baseURL!, diagramtype, fotmat, diagramSource));
+//example: https://kroki.io
+const baseURL = Deno.env.get("KROKI_URL");
 
-const path = "./hello.png";
-convertKroki(encodeKrokiURL(baseURL!, diagramtype, fotmat, diagramSource), path);
+const diagramType = DiagramType.Graphviz; // "graphviz";
 
-const fotmatsvg = "svg";
-console.log(encodeKrokiURL(baseURL!, diagramtype, fotmatsvg, diagramSource));
-
-const pathsvg= "./hello.svg";
-convertKroki(encodeKrokiURL(baseURL!, diagramtype, fotmatsvg, diagramSource), pathsvg);
+console.log(encodeKrokiURL(baseURL!, diagramType, OutputFormat.Png, diagramSource));
+convertKroki(encodeKrokiURL(baseURL!, diagramType, OutputFormat.Png, diagramSource), "./hello.png");
+convertKroki(encodeKrokiURL(baseURL!, diagramType,  OutputFormat.Svg, diagramSource), "./hello.svg");

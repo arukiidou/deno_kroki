@@ -3,7 +3,8 @@ import { build, emptyDir } from "https://deno.land/x/dnt@0.23.0/mod.ts";
 await emptyDir("./npm");
 
 await build({
-  entryPoints: ["./lib/encode_kroki.ts"],
+  scriptModule: false,
+  entryPoints: ["./lib/mod.ts"],
   outDir: "./npm/encode_kroki",
   shims: {
     // see JS docs for overview and more options
@@ -30,3 +31,7 @@ await build({
 // post build steps
 Deno.copyFileSync("LICENSE", "npm/encode_kroki/LICENSE");
 Deno.copyFileSync("README.md", "npm/encode_kroki/README.md");
+// deno run -A .\scripts\build_encode_kroki.ts 0.5.0
+// cd npm\encode_kroki
+// npm publish
+// OTP-arukiidou

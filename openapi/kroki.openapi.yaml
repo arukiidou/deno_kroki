@@ -1,0 +1,119 @@
+openapi: 3.0.3
+x-stoplight:
+  id: tsjikoq1awfyb
+info:
+  title: kroki-openapi-spec
+  version: '1.0'
+  description: kroki-openapi-spec(experimental)
+  contact: 
+    name: arukiidou
+    url: https://github.com/arukiidou/deno_kroki
+  license: 
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+  - url: 'https://kroki.aruki.com'
+tags:
+  - name: no-header-style
+    description: requests without headers
+paths:
+  '/{diagramType}/{outputFormat}/{diagramSource}':
+    get:
+      operationId: fetch-kroki
+      summary: fetch kroki diagrams
+      tags:
+        - no-header-style
+      description: get diagrams
+      responses:
+        '200':
+          $ref: '#/components/responses/DiagramImage'
+      parameters:
+        - $ref: '#/components/parameters/DiagramType'
+        - $ref: '#/components/parameters/OutputFormat'
+        - $ref: '#/components/parameters/DiagramSource'
+components:
+  parameters:
+    DiagramType:
+      name: diagramType
+      description: type of diagrams
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/DiagramType'
+    OutputFormat:
+      name: outputFormat
+      description: image output format
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/OutputFormat'
+    DiagramSource:
+      name: diagramSource
+      description: encoded in the URL using a deflate + base64 algorithm.
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/EncodeURL'
+  responses:
+    DiagramImage:
+      description: response-description-single
+      content:
+        image/svg+xml:
+          schema:
+            $ref: '#/components/schemas/DiagramImageSVG'
+        image/png:
+          schema:
+            $ref: '#/components/schemas/DiagramImagePNG'
+  schemas:
+    DiagramType:
+      type: string
+      description: type of diagrams
+      example: plantuml
+      enum:
+        - actdiag
+        - blockdiag
+        - bpmn
+        - bytefield
+        - c4plantuml
+        - diagramsnet
+        - ditaa
+        - erd
+        - excalidraw
+        - graphviz
+        - mermaid
+        - nomnoml
+        - nwdiag
+        - packetdiag
+        - pikchr
+        - plantuml
+        - rackdiag
+        - seqdiag
+        - structurizr
+        - svgbob
+        - umlet
+        - vega
+        - vegalite
+        - wavedrom
+    OutputFormat:
+      type: string
+      description: image output format
+      example: svg
+      default: svg
+      enum:
+        - png
+        - svg
+        - jpeg
+        - pdf
+        - base64
+    EncodeURL:
+      type: string
+      format: byte
+      description: encoded in the URL using a deflate + base64 algorithm.
+    DiagramImageSVG:
+      type: string
+      description: DiagramImageSVG
+    DiagramImagePNG:
+      type: string
+      format: binary
+      description: DiagramImagePNG
+  securitySchemes: {}
