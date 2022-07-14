@@ -1,5 +1,5 @@
-import { assertEquals } from "https://deno.land/std@0.141.0/testing/asserts.ts";
-import { encodeKroki } from "./encode_kroki.ts";
+import { assertEquals } from "https://deno.land/std@0.148.0/testing/asserts.ts";
+import { encode } from "./encode.ts";
 
 const graphviz = `digraph G {
     Hello->World
@@ -103,7 +103,7 @@ export const testSetString = new Map([
 
 Deno.test("[lib/encode_kroki] testBase64EncodeString", () => {
   for (const [type, test] of testSetString) {
-    const actual = encodeKroki(test.input);
+    const actual = encode(test.input);
     assertEquals(
       actual,
       test.expect,
