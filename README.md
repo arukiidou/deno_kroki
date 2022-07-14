@@ -6,12 +6,12 @@ encode-diagram deno client/library from [Kroki](https://docs.kroki.io/kroki/)
 
 ### deno
 
-https://deno.land/x/deno_kroki@v0.7.0
+https://deno.land/x/deno_kroki@v0.8.1
 
 ### npm(esmodule)
 
-https://esm.sh/deno_encode_kroki@0.7.0
-https://esm.sh/deno_encode_kroki@0.7.0/types/mod.d.ts
+https://esm.sh/deno_encode_kroki@0.6.0
+https://esm.sh/deno_encode_kroki@0.6.0/types/mod.d.ts
 
 ## usage
 

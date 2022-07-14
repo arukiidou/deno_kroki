@@ -5,13 +5,14 @@ import { writableStreamFromWriter } from "https://deno.land/std@0.148.0/streams/
  * @link https://docs.kroki.io/kroki/setup/encode-diagram/
  * @param {URL} url kroki url
  * @param {string} path file path
- * @param {Record<string, string>} headers request headers.
  */
 export function convertKroki(
   url: URL,
   path: string,
 ): void {
-  const writableStream = writableStreamFromWriter(Deno.createSync(path));
+  const writableStream: WritableStream<Uint8Array> = writableStreamFromWriter(
+    Deno.createSync(path),
+  );
   convertKrokiByStream(url, writableStream);
 }
 

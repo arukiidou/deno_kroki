@@ -36,7 +36,9 @@ export function encodeKrokiURL(
   queryString: URLSearchParams = new URLSearchParams(),
 ): URL {
   return new URL(
-    `/${diagramType}/${outputFormat}/${encode(diagramSource)}?${queryString.toString()}`,
+    `/${diagramType}/${outputFormat}/${
+      encode(diagramSource)
+    }?${queryString.toString()}`,
     baseURL,
   );
 }
